@@ -1,5 +1,5 @@
 import {omit, pick} from 'lodash';
-import {getUserMedia, enumerateDevices} from 'mediaDevices';
+import {getUserMedia, enumerateDevices} from '../common/mediaDevices';
 
 const facingMatching = {
     "user": /front/i,
