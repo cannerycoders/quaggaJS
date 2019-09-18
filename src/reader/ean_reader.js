@@ -324,15 +324,14 @@ EANReader.prototype._decode = function() {
         }
     }
 
-    return {
+    return Object.assign({
         code: result.join(""),
         start: startInfo.start,
         end: code.end,
         codeset: "",
         startInfo: startInfo,
-        decodedCodes: decodedCodes,
-        ...resultInfo
-    };
+        decodedCodes: decodedCodes
+    }, resultInfo);
 };
 
 EANReader.prototype._decodeExtensions = function(offset) {

@@ -361,6 +361,11 @@ function initWorker(cb) {
 }
 
 function configForWorker(config) {
+    let ret = Object.assign({}, config);
+    ret.inputStream = Object.assign({}, config.inputStream);
+    ret.inputStream.target = null;
+
+    /* was
     return {
         ...config,
         inputStream: {
@@ -368,6 +373,7 @@ function configForWorker(config) {
             target: null
         }
     };
+    */
 }
 
 function workerInterface(factory) {
